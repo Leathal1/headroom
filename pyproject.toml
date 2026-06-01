@@ -210,6 +210,7 @@ dev = [
     "ruff>=0.1.0",
     "mypy>=1.0.0",
     "pre-commit>=3.0.0",
+    "packaging>=24.0",            # VIPER regression test version comparisons
     "openai>=1.0.0",
     "anthropic>=0.18.0",
     "litellm==1.82.3",
