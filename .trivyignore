@@ -1,0 +1,14 @@
+# Trivy vulnerability ignore list
+# Format: CVE-ID (one per line), optional comments prefixed with #
+#
+# CVE-2024-35515: sqlitedict insecure deserialization
+# Affected: sqlitedict ≤2.1.0 (latest on PyPI as of 2025-06)
+# Source: transitive dependency via lm-eval[api] (benchmark optional extra)
+# Status: NO FIXED VERSION exists upstream; sqlitedict 2.1.0 is the latest release
+# Context: lm-eval uses sqlitedict for SQLite-backed caching of benchmark results.
+#          Headroom does NOT import sqlitedict directly; it only spawns lm-eval
+#          subprocess during optional benchmark runs. The vulnerable deserialization
+#          path requires crafted malicious SQLite content passed to PickledDict,
+#          which is not attacker-controllable in headroom's usage pattern.
+# Ref: https://cveawg.mitre.org/api/cve/CVE-2024-35515
+CVE-2024-35515
